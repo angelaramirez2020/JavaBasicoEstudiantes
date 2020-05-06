@@ -1,1 +1,1 @@
-# JavaBasicoEstudiantes
+# JavaBasicoEstudiantes este es un proyecto de Java básico
