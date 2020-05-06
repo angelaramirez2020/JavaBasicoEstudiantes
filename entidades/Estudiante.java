@@ -1,9 +1,12 @@
 package entidades;
 
+import java.util.ArrayList;
+
 public class Estudiante{
 	private int edad;
 	private String nombre;
 	private int grado;
+	ArrayList<Float> listaCalificaciones = new ArrayList<>();
 	
 	public void setEdad(int edad) {
 		this.edad = edad;
@@ -27,5 +30,13 @@ public class Estudiante{
 	
 	public int getGrado() {
 		return this.grado;
+	}
+	
+	public void setlistaCalificaciones (ArrayList<Float> listaCalificaciones){
+		this.listaCalificaciones = listaCalificaciones;
+	}
+	
+	public ArrayList<Float>  getlistaCalificaciones(){
+		return this.listaCalificaciones;
 	}
 }
