@@ -6,7 +6,7 @@ public class Estudiante{
 	private int edad;
 	private String nombre;
 	private int grado;
-	ArrayList<Float> listaCalificaciones = new ArrayList<>();
+	private ArrayList<Float> listaCalificaciones;
 	
 	public void setEdad(int edad) {
 		this.edad = edad;
@@ -32,11 +32,11 @@ public class Estudiante{
 		return this.grado;
 	}
 	
-	public void setlistaCalificaciones (ArrayList<Float> listaCalificaciones){
+	public void setListaCalificaciones (ArrayList<Float> listaCalificaciones){
 		this.listaCalificaciones = listaCalificaciones;
 	}
 	
-	public ArrayList<Float>  getlistaCalificaciones(){
+	public ArrayList<Float>  getListaCalificaciones(){
 		return this.listaCalificaciones;
 	}
 }

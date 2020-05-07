@@ -9,6 +9,9 @@ public class Main {
 	static ArrayList<Estudiante> listaEstudiantes;
 	static int posicionEstudiante;
 	static Scanner leer;
+	static ArrayList<Float> listaCalificaciones;
+	static final int CANTIDAD_NOTAS = 3;
+	
 
 	public static void main(String[] args) {	
 		listaEstudiantes = new ArrayList<>();
@@ -27,6 +30,7 @@ public class Main {
 					System.out.println("Ingrese la edad del estudiante " + posicionEstudiante);
 					estudianteAux.setEdad(leer.nextInt());
 					leer.nextLine();
+					estudianteAux.setListaCalificaciones(insertarNotas());
 					addEstudiante(estudianteAux);
 					break;
 				case 2:
@@ -44,16 +48,32 @@ public class Main {
 	}
 	
 	public static void imprimirEstudiantes(){
+		float promedio;
 		for(Estudiante estudianteIterador : listaEstudiantes) {
 			System.out.println(estudianteIterador.getNombre() + " tiene " + estudianteIterador.getEdad() + " anhos");
+			promedio = 0.0F;
+			for(Float nota : estudianteIterador.getListaCalificaciones()){
+				promedio = promedio + nota;
+			}
+			promedio = promedio / CANTIDAD_NOTAS;
+			System.out.println("El estudiante tiene un promedio de: " + promedio);
 		}
 	}
 	
 	public static int formularioOpciones(){
 		System.out.println("Opciones");
 		System.out.println("Ingrese 0 para salir");
-		System.out.println("Ingrese 1 para crear un estudiante");
+		System.out.println("Ingrese 1 para crear un estudiante");	
 		System.out.println("Ingrese 2 para mostrar todos los estudiantes");
 		return leer.nextInt();
+	}
+	
+	public static ArrayList<Float> insertarNotas(){
+		listaCalificaciones = new ArrayList<>();
+		for(int i = 0; i < CANTIDAD_NOTAS; i++){
+			System.out.println("Ingrese la nota número: " + (i + 1));
+			listaCalificaciones.add(leer.nextFloat());
+		} 
+		return listaCalificaciones;	
 	}
 }
