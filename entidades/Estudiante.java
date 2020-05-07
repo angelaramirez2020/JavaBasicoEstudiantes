@@ -7,6 +7,7 @@ public class Estudiante{
 	private String nombre;
 	private int grado;
 	private ArrayList<Float> listaCalificaciones;
+	private String acudiente;
 	
 	public void setEdad(int edad) {
 		this.edad = edad;
@@ -39,4 +40,13 @@ public class Estudiante{
 	public ArrayList<Float>  getListaCalificaciones(){
 		return this.listaCalificaciones;
 	}
+	
+	public void setAcudiente(String acudiente) {
+		this.acudiente = acudiente;
+	}
+	
+	public String getAcudiente() {
+		return this.acudiente;
+	}
+	
 }

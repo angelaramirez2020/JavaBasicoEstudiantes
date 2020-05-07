@@ -36,6 +36,8 @@ public class Main {
 					System.out.println("Ingrese la edad del estudiante " + posicionEstudiante);
 					estudianteAux.setEdad(leer.nextInt());
 					leer.nextLine();
+					System.out.println("Ingrese el nombre del acudiente para el estudiante " + posicionEstudiante);
+					estudianteAux.setAcudiente(leer.nextLine());
 					estudianteAux.setListaCalificaciones(insertarNotas());
 					addEstudiante(estudianteAux);
 					break;
@@ -82,6 +84,7 @@ public class Main {
 			}
 			promedio = promedio / CANTIDAD_NOTAS;
 			System.out.println("El estudiante tiene un promedio de: " + promedio);
+			System.out.println("El acudiente del estudiante es: " + estudianteIterador.getAcudiente());
 		}
 	}
 	
