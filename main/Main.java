@@ -53,6 +53,9 @@ public class Main {
 					profesorAux.setNombreMateria(leer.nextLine());
 					addProfesor(profesorAux);
 					break;
+					case 4:
+					imprimirProfesores();
+					break;
 				default:
 					break;
 			}
@@ -79,6 +82,12 @@ public class Main {
 			}
 			promedio = promedio / CANTIDAD_NOTAS;
 			System.out.println("El estudiante tiene un promedio de: " + promedio);
+		}
+	}
+	
+	public static void imprimirProfesores(){
+		for(Profesor profesorIngresado : listaProfesores){
+			System.out.println("Documento Docente:" + profesorIngresado.getDocumento() + " Nombre Docente:" + profesorIngresado.getNombre() + " Asignatura: " + profesorIngresado.getNombreMateria());
 		}
 	}
 	
