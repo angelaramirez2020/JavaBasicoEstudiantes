@@ -1,13 +1,16 @@
 package main;
 
 import entidades.Estudiante;
+import entidades.Profesor;
 import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Main {
 	
 	static ArrayList<Estudiante> listaEstudiantes;
+	static ArrayList<Profesor> listaProfesores;
 	static int posicionEstudiante;
+	static int posicionProfesor;
 	static Scanner leer;
 	static ArrayList<Float> listaCalificaciones;
 	static final int CANTIDAD_NOTAS = 3;
@@ -15,9 +18,12 @@ public class Main {
 
 	public static void main(String[] args) {	
 		listaEstudiantes = new ArrayList<>();
+		listaProfesores = new ArrayList<>();
 		posicionEstudiante = 1;
+		posicionProfesor = 1;
 		leer = new Scanner(System.in);
 		Estudiante estudianteAux;
+		Profesor profesorAux;
 		int respuesta = 0;
 		do {
 			respuesta = formularioOpciones();
@@ -36,6 +42,17 @@ public class Main {
 				case 2:
 					imprimirEstudiantes();
 					break;
+				case 3:
+					profesorAux = new Profesor();
+					System.out.println("Ingrese el nombre del profesor " + posicionProfesor);
+					profesorAux.setNombre(leer.nextLine());
+					System.out.println("Ingrese el número del documento del profesor " + posicionProfesor);
+					profesorAux.setDocumento(leer.nextInt());
+					leer.nextLine();
+					System.out.println("Ingrese la materia a cargo del profesor " + posicionProfesor);
+					profesorAux.setNombreMateria(leer.nextLine());
+					addProfesor(profesorAux);
+					break;
 				default:
 					break;
 			}
@@ -45,6 +62,11 @@ public class Main {
 	public static void addEstudiante(Estudiante estudiante){
 		listaEstudiantes.add(estudiante);
 		posicionEstudiante = posicionEstudiante + 1;
+	}
+	
+	public static void addProfesor(Profesor profesor){
+		listaProfesores.add(profesor);
+		posicionProfesor = posicionProfesor + 1;
 	}
 	
 	public static void imprimirEstudiantes(){
@@ -65,6 +87,7 @@ public class Main {
 		System.out.println("Ingrese 0 para salir");
 		System.out.println("Ingrese 1 para crear un estudiante");	
 		System.out.println("Ingrese 2 para mostrar todos los estudiantes");
+		System.out.println("Ingrese 3 para crear el profesor");
 		return leer.nextInt();
 	}
 	
