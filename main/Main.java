@@ -55,7 +55,7 @@ public class Main {
 					profesorAux.setNombreMateria(leer.nextLine());
 					addProfesor(profesorAux);
 					break;
-					case 4:
+				case 4:
 					imprimirProfesores();
 					break;
 				default:
@@ -100,6 +100,7 @@ public class Main {
 		System.out.println("Ingrese 1 para crear un estudiante");	
 		System.out.println("Ingrese 2 para mostrar todos los estudiantes");
 		System.out.println("Ingrese 3 para crear el profesor");
+		System.out.println("Ingrese 4 para imprimir Profesores");
 		return leer.nextInt();
 	}
 	
